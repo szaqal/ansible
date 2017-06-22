@@ -2,7 +2,7 @@
 
 - hosts: all
   tasks:
-    - name: 'Install HDFS'
+    - name: 'Install Hadoop'
       become: true
       unarchive: src={{ hadoop_url }} dest=/opt remote_src=True
     - name: 'Set java_home'
