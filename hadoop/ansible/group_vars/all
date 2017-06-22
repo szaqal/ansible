@@ -1,0 +1,8 @@
+---
+#hadoop_url: http://ftp.ps.pl/pub/apache/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz
+hadoop_root: /opt/hadoop-2.7.3
+hadoop_url: http://192.168.2.11/hadoop-2.8.0.tar.gz
+java_home: /usr/lib/jvm/java-8-openjdk-amd64/jre
+
+
+phy_iface: ens3

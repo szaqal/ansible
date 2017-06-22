@@ -1,0 +1,36 @@
+---
+
+- hosts: all
+  tasks:
+    - name: 'APT Update'
+      become: true
+      apt: update_cache=yes
+    - name: 'Java8'
+      become: true
+      apt: name=openjdk-8-jre-headless
+    - name: 'Docker repo'
+      apt_repository: repo="deb  https://download.docker.com/linux/ubuntu xenial stable" state=present
+      become: true
+    - name: 'Add docker repo keys'
+      shell:  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+      become: true
+- hosts: master
+  tasks:
+    - name: 'Zookeeper'
+      apt: name=zookeeper
+      become: true
+    - name: 'Zookeeperbin'
+      apt: name=zookeeper-bin
+      become: true
+    - name: 'Zookeeperd'
+      apt: name=zookeeperd
+      become: true
+    - name: 'Gradle'
+      apt: update_cache=yes name=gradle
+      become: true
+    - name: 'Maven'
+      apt: update_cache=yes name=maven
+      become: true
+    - name: 'Java8 JDK'
+      become: true
+      apt: name=openjdk-8-jdk-headless
