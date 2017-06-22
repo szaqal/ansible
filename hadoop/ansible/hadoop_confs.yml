@@ -1,6 +1,6 @@
 ---
 
-- hosts: slaves
+- hosts: all 
   tasks:
     - name: 'Hadoop config'
       become: true
