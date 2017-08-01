@@ -2,7 +2,7 @@
 
 source commons.sh
 
-set -x
+#set -x
 
 function create_vm {
 virt-install \
@@ -21,3 +21,5 @@ virt-install \
 echo "Enter vm name";
 
 read VM_NAME
+
+create_vm $VM_NAME
