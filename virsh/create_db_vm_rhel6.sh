@@ -13,7 +13,6 @@ virt-install \
 --network bridge=br0 \
 --cdrom ${VM_CENTOS_6_INSTALLATION_IMAGE} \
 --disk path=${GM_PATH}/$1,size=100  \
---graphics vnc \
 --os-type linux \
 --os-variant rhel6 
 }
