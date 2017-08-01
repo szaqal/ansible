@@ -13,9 +13,9 @@ virt-install \
 --network bridge=${BRIDGE_IFACE_NAME} \
 --cdrom ${VM_CENTOS_INSTALLATION_IMAGE} \
 --disk path=${VM_PATH}/$1,size=${VM_SMALL_DISK} \
---graphics vnc
+--graphics vnc \
 --os-type ${VM_OS_TYPE} \
---os-variant ${VM_CENTOS_OS_VARIANT}
+--os-variant ${VM_CENTOS_OS_VARIANT} \
 --extra-args="ip=$2"
 }
 

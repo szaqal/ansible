@@ -2,7 +2,7 @@
 
 source commons.sh
 
-set -x
+#set -x
 
 function create_vm {
 virt-install \
@@ -13,18 +13,17 @@ virt-install \
 --network bridge=${BRIDGE_IFACE_NAME} \
 --cdrom ${VM_UBUNTU_INSTALLATION_IMAGE} \
 --disk path=${VM_PATH}/$1,size=${VM_SMALL_DISK} \
---graphics vnc
+--graphics vnc \
 --os-type ${VM_OS_TYPE} \
 --os-variant ${VM_CENTOS_OS_VARIANT}
---extra-args="ip=$2"
 }
 
 
-echo "Enter vm name"
+echo "Enter vm name";
 
 read VM_NAME
 
-echo "Enter IP address"
+echo "Enter IP address";
 
 read IP_ADDR
 
