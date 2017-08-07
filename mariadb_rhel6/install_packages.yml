@@ -18,6 +18,9 @@
     - name: 'YUM installing telnet'
       become: true
       yum: name='telnet' state=latest
+    - name: 'YUM installing screen'
+      become: true
+      yum: name='screen' state=latest
     - name: 'YUM installing mariadb repository'
       become: true
       copy: src=MariaDB.repo dest=/etc/yum.repos.d/ mode=0644
