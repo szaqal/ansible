@@ -53,10 +53,10 @@
   tasks:
     - name: 'Configuring slave 5'
       become: true
-      template: src=config/slave3.j2 dest=/etc/mesos-slave/ip mode=0644
+      template: src=config/slave5.j2 dest=/etc/mesos-slave/ip mode=0644
     - name: 'Configuring slave 5'
       become: true
-      template: src=config/slave3.j2 dest=/etc/mesos-slave/hostname mode=0644
+      template: src=config/slave5.j2 dest=/etc/mesos-slave/hostname mode=0644
 
 
 - hosts: master
