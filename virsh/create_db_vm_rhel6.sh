@@ -12,7 +12,7 @@ virt-install \
 --vcpus 2 \
 --network bridge=br0 \
 --cdrom ${VM_CENTOS_6_INSTALLATION_IMAGE} \
---disk path=${VM_PATH}/$1,size=100  \
+--disk path=${VM_PATH}/$1,size=60  \
 --os-type linux \
 --os-variant rhel6 
 }
