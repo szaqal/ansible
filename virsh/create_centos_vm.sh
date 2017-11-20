@@ -16,7 +16,6 @@ virt-install \
 --graphics vnc \
 --os-type ${VM_OS_TYPE} \
 --os-variant ${VM_CENTOS_OS_VARIANT} \
---extra-args="ip=$2"
 }
 
 
@@ -24,8 +23,4 @@ echo "Enter vm name"
 
 read VM_NAME
 
-echo "Enter IP address"
-
-read IP_ADDR
-
-create_vm $VM_NAME $IP_ADDR;
+create_vm $VM_NAME;
