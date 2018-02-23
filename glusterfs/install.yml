@@ -19,6 +19,7 @@
         - glusterfs-cli  
         - centos-release-gluster312  
         - glusterfs-server  
+        - glusterfs-fuse
     - name: 'enable server'
       become: true
       shell: systemctl enable glusterd
@@ -28,4 +29,6 @@
     - name: 'Updating /etc/hosts'
       become: true
       shell: "/setup_hosts.sh"
-       
+#    - name: 'SELinux disable'
+#      become: true
+#      shell: "setenforce 0"
