@@ -3,7 +3,7 @@
     - name : 'YUM updating packages'
       become: true
       yum: name='*' state=latest
-      name: 'YUM gluster repository' 
+    - name: 'YUM gluster repository' 
       become: true
       yum_repository:
         name: gluster
@@ -14,7 +14,7 @@
     - name: 'YUM install base software'
       become: true
       yum:
-        name: {{ item }} 
+        name: "{{ item }}" 
         state: latest
       with_items:
         - yum-utils
