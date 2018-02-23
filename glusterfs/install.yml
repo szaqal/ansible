@@ -3,14 +3,6 @@
     - name : 'YUM updating packages'
       become: true
       yum: name='*' state=latest
-    - name: 'YUM gluster repository' 
-      become: true
-      yum_repository:
-        name: gluster
-        description: gluster YUM repo
-        baseurl: http://download.gluster.org/pub/gluster/glusterfs/LATEST/CentOS/glusterfs-epel.repo
-        gpgcheck: no
-
     - name: 'YUM install base software'
       become: true
       yum:
@@ -22,3 +14,5 @@
         - wget  
         - vim  
         - telnet  
+        - epel-release  
+        - glusterfs  
