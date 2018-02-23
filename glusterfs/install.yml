@@ -22,4 +22,10 @@
     - name: 'enable server'
       become: true
       shell: systemctl enable glusterd
+    - name: 'Copying hosts setup script'
+      become: true
+      template: src=setup_hosts.sh.j2 dest=/setup_hosts.sh mode=0777
+    - name: 'Updating /etc/hosts'
+      become: true
+      shell: "/setup_hosts.sh"
        
