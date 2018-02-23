@@ -1,0 +1,24 @@
+- hosts: gluster 
+  tasks:
+    - name : 'YUM updating packages'
+      become: true
+      yum: name='*' state=latest
+      name: 'YUM gluster repository' 
+      become: true
+      yum_repository:
+        name: gluster
+        description: gluster YUM repo
+        baseurl: http://download.gluster.org/pub/gluster/glusterfs/LATEST/CentOS/glusterfs-epel.repo
+        gpgcheck: no
+
+    - name: 'YUM install base software'
+      become: true
+      yum:
+        name: {{ item }} 
+        state: latest
+      with_items:
+        - yum-utils
+        - net-tools
+        - wget  
+        - vim  
+        - telnet  
