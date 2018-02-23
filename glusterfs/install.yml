@@ -16,3 +16,10 @@
         - telnet  
         - epel-release  
         - glusterfs  
+        - glusterfs-cli  
+        - centos-release-gluster312  
+        - glusterfs-server  
+    - name: 'enable server'
+      become: true
+      shell: systemctl enable glusterd
+       
