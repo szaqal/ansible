@@ -23,7 +23,10 @@
     - name: 'enable rngtool'
       become: true
       shell: systemctl enable rng-tools
-    - name: 'enable rngtool'
+    - name: 'stop rngtool'
+      become: true
+      shell: systemctl stop rng-tools
+    - name: 'start rngtool'
       become: true
       shell: systemctl start rng-tools
     - name: 'Install OpenVAS'
